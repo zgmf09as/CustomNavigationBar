@@ -22,14 +22,60 @@ class ViewController: UIViewController {
         // initTitleImage()
         
         // 텍스트필드 사용하기, 아이템 영역 커스터마이징
-        initTitleInput()
+        // initTitleInput()
         
         // 크롬 브라우저 UI 흉내내기
         initTitleCrome()
     }
     
     func initTitleCrome() {
+        let tf = UITextField()
         
+        tf.frame = CGRect(x: 0, y: 0, width: 300, height: 35)
+        tf.backgroundColor = UIColor.white
+        tf.font = UIFont.systemFont(ofSize: 13)
+        tf.autocapitalizationType = .none   // 자동 대문자 변환 속성 사용 안함
+        tf.autocorrectionType = .no // 자동 입력 기능 해제
+        tf.spellCheckingType = .no  // 스펠링 체크 기능 해제
+        tf.keyboardType = .URL
+        tf.keyboardAppearance = .dark
+        tf.layer.borderWidth = 0.3
+        tf.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0).cgColor
+        
+        navigationItem.titleView = tf
+        
+        // left item area
+        let back = UIImage(named: "arrow-back")
+        let leftItem = UIBarButtonItem(image: back, style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = leftItem
+        
+        // right item area
+        let rv = UIView()
+        rv.frame = CGRect(x: 0, y: 0, width: 70, height: 37)
+        
+        let cnt = UILabel()
+        cnt.frame = CGRect(x: 10, y: 8, width: 20, height: 20)
+        cnt.font = UIFont.boldSystemFont(ofSize: 10)
+        cnt.textColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0)
+        cnt.text = "12"
+        cnt.textAlignment = .center
+        
+        cnt.layer.cornerRadius = 3
+        cnt.layer.borderWidth = 2
+        cnt.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0).cgColor
+        
+        cnt.layoutMargins.right = CGFloat(20.0)
+        
+        rv.addSubview(cnt)
+        
+        let more = UIButton(type:.system)
+        more.frame = CGRect(x: cnt.frame.origin.x + cnt.frame.width + cnt.layoutMargins.right, y:10, width: 16, height: 16)
+        more.setImage(UIImage(named: "more"), for: .normal)
+        
+        rv.addSubview(more)
+        
+        let rightItem = UIBarButtonItem(customView: rv)
+        navigationItem.rightBarButtonItem = rightItem
     }
     
     func initTitleInput() {
