@@ -11,6 +11,9 @@
 		42049AE21F96F7950007CA20 /* swift_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42049ADF1F96F7950007CA20 /* swift_logo@3x.png */; };
 		42049AE31F96F7950007CA20 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42049AE01F96F7950007CA20 /* more@2x.png */; };
 		42049AE71F971C9B0007CA20 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42049AE61F971C9B0007CA20 /* MapKitViewController.swift */; };
+		42049AEA1F971D2E0007CA20 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 42049AE81F971D2E0007CA20 /* note.png */; };
+		42049AEB1F971D2E0007CA20 /* rating5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42049AE91F971D2E0007CA20 /* rating5@2x.png */; };
+		42049AED1F971E150007CA20 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42049AEC1F971E150007CA20 /* ImageViewController.swift */; };
 		423D79C21F96EC420012DF36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D79C11F96EC420012DF36 /* AppDelegate.swift */; };
 		423D79C41F96EC420012DF36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423D79C31F96EC420012DF36 /* ViewController.swift */; };
 		423D79C71F96EC420012DF36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423D79C51F96EC420012DF36 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		42049ADF1F96F7950007CA20 /* swift_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swift_logo@3x.png"; sourceTree = "<group>"; };
 		42049AE01F96F7950007CA20 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		42049AE61F971C9B0007CA20 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
+		42049AE81F971D2E0007CA20 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		42049AE91F971D2E0007CA20 /* rating5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rating5@2x.png"; sourceTree = "<group>"; };
+		42049AEC1F971E150007CA20 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		423D79BE1F96EC420012DF36 /* CustomNavigationBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomNavigationBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423D79C11F96EC420012DF36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		423D79C31F96EC420012DF36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		42049ADD1F96F7730007CA20 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				42049AE81F971D2E0007CA20 /* note.png */,
+				42049AE91F971D2E0007CA20 /* rating5@2x.png */,
 				42049ADE1F96F7950007CA20 /* arrow-back@2x.png */,
 				42049AE01F96F7950007CA20 /* more@2x.png */,
 				42049ADF1F96F7950007CA20 /* swift_logo@3x.png */,
@@ -83,6 +91,7 @@
 				423D79D01F96EC420012DF36 /* Info.plist */,
 				423D79C81F96EC420012DF36 /* CustomNavigationBar.xcdatamodeld */,
 				42049AE61F971C9B0007CA20 /* MapKitViewController.swift */,
+				42049AEC1F971E150007CA20 /* ImageViewController.swift */,
 			);
 			path = CustomNavigationBar;
 			sourceTree = "<group>";
@@ -151,7 +160,9 @@
 				423D79C71F96EC420012DF36 /* Main.storyboard in Resources */,
 				42049AE31F96F7950007CA20 /* more@2x.png in Resources */,
 				42049AE21F96F7950007CA20 /* swift_logo@3x.png in Resources */,
+				42049AEB1F971D2E0007CA20 /* rating5@2x.png in Resources */,
 				42049AE11F96F7950007CA20 /* arrow-back@2x.png in Resources */,
+				42049AEA1F971D2E0007CA20 /* note.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +175,7 @@
 			files = (
 				42049AE71F971C9B0007CA20 /* MapKitViewController.swift in Sources */,
 				423D79CA1F96EC420012DF36 /* CustomNavigationBar.xcdatamodeld in Sources */,
+				42049AED1F971E150007CA20 /* ImageViewController.swift in Sources */,
 				423D79C41F96EC420012DF36 /* ViewController.swift in Sources */,
 				423D79C21F96EC420012DF36 /* AppDelegate.swift in Sources */,
 			);

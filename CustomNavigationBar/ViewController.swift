@@ -37,10 +37,31 @@ class ViewController: UIViewController {
         let alertBtn = UIButton(type: .system)
         
         alertBtn.frame = CGRect(x: 0, y: 150, width: 100, height:30)
-        alertBtn.center.x = view.frame.width/2
+        alertBtn.center.x = view.frame.width/2 - 50
         alertBtn.setTitle("Map Alert", for: .normal)
         alertBtn.addTarget(self, action: #selector(mapAlert(_:)), for: .touchUpInside)
         view.addSubview(alertBtn)
+        
+        let alertBtn2 = UIButton(type: .system)
+        
+        alertBtn2.frame = CGRect(x: 0, y: 150, width: 100, height:30)
+        alertBtn2.center.x = view.frame.width/2 + 50
+        alertBtn2.setTitle("Image Alert", for: .normal)
+        alertBtn2.addTarget(self, action: #selector(imageAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertBtn2)
+    }
+    
+    @objc func imageAlert(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "이번 글의 평점은 다음과 같습니다.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        
+        // 콘텐츠 영역에 들어갈 뷰 컨트롤러 생성 및 등록
+        let contentVC = ImageViewController()
+        
+        alert.setValue(contentVC, forKey: "contentViewController")
+        present(alert, animated: true)
     }
     
     @objc func mapAlert(_ sender: UIButton) {
