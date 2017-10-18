@@ -26,6 +26,51 @@ class ViewController: UIViewController {
         
         // 크롬 브라우저 UI 흉내내기
         initTitleCrome()
+        
+        // Test Alert
+        // setAlert()
+        
+        setCallAlertButton()
+    }
+    
+    func setCallAlertButton() {
+        let alertBtn = UIButton(type: .system)
+        
+        alertBtn.frame = CGRect(x: 0, y: 150, width: 100, height:30)
+        alertBtn.center.x = view.frame.width/2
+        alertBtn.setTitle("Map Alert", for: .normal)
+        alertBtn.addTarget(self, action: #selector(mapAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertBtn)
+    }
+    
+    @objc func mapAlert(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "여기가 맞습니까?", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        // 콘텐츠 영역에 들어갈 뷰 컨트롤러 생성 및 등록
+        let contentVC = MapKitViewController()
+        
+        alert.setValue(contentVC, forKey: "contentViewController")
+        present(alert, animated: true)
+    }
+    
+    func setAlert() {
+        let alert = UIAlertController(title: "Title Alert", message: "기본 메시지가 들어가는 곳", preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        
+        let v = UIViewController()
+        v.view.backgroundColor = UIColor.red
+        alert.setValue(v, forKey: "contentViewController")
+        
+        present(alert, animated: true)
     }
     
     func initTitleCrome() {
