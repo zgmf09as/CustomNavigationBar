@@ -19,7 +19,26 @@ class ViewController: UIViewController {
         // initTitleNew() // 2. 복잡 방법 ( 변화도 높음 )
         
         // 이미지 표현하기
-        initTitleImage()
+        // initTitleImage()
+        
+        // 텍스트필드 사용하기
+        initTitleInput()
+    }
+    
+    func initTitleInput() {
+        let tf = UITextField()
+        tf.frame = CGRect(x: 0, y: 0, width: 300, height: 35)
+        tf.backgroundColor = UIColor.white
+        tf.font = UIFont.systemFont(ofSize: 13)
+        tf.autocapitalizationType = .none   // 자동 대문자 변환 속성 사용 안함
+        tf.autocorrectionType = .no // 자동 입력 기능 해제
+        tf.spellCheckingType = .no  // 스펠링 체크 기능 해제
+        tf.keyboardType = .URL
+        tf.keyboardAppearance = .dark
+        tf.layer.borderWidth = 0.3
+        tf.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0).cgColor
+        
+        navigationItem.titleView = tf
     }
     
     func initTitleImage() {
