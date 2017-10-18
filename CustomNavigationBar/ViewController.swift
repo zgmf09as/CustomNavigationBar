@@ -13,8 +13,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // initTitle()
-        initTitleNew()
+        
+        // 두줄 타이틀 만들기
+        // initTitle() // 1. 단순 방법 ( 변화도 낮음 )
+        // initTitleNew() // 2. 복잡 방법 ( 변화도 높음 )
+        
+        // 이미지 표현하기
+        initTitleImage()
+    }
+    
+    func initTitleImage() {
+        let image = UIImage(named: "swift_logo")
+        let imageV = UIImageView(image: image)
+        
+        navigationItem.titleView = imageV
     }
     
     func initTitle() {
@@ -59,6 +71,7 @@ class ViewController: UIViewController {
         containerView.addSubview(subTitle)
         
         navigationItem.titleView = containerView
+        
         
         let color = UIColor(red: 0.02, green: 0.22, blue: 0.49, alpha: 1.0)
         navigationController?.navigationBar.barTintColor = color
