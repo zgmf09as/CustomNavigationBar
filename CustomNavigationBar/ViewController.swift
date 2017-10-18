@@ -21,12 +21,14 @@ class ViewController: UIViewController {
         // 이미지 표현하기
         // initTitleImage()
         
-        // 텍스트필드 사용하기
+        // 텍스트필드 사용하기, 아이템 영역 커스터마이징
         initTitleInput()
+        
     }
     
     func initTitleInput() {
         let tf = UITextField()
+        
         tf.frame = CGRect(x: 0, y: 0, width: 300, height: 35)
         tf.backgroundColor = UIColor.white
         tf.font = UIFont.systemFont(ofSize: 13)
@@ -39,6 +41,18 @@ class ViewController: UIViewController {
         tf.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0).cgColor
         
         navigationItem.titleView = tf
+        
+        // left item area
+        let leftItem = UIBarButtonItem(customView: lv)
+        navigationItem.leftBarButtonItem = leftItem
+        
+        // right item area
+        let rv = UIView()
+        rv.frame = CGRect(x: 0, y: 0, width: 150, height: 37)
+        rv.backgroundColor = UIColor.brown
+        
+        let rightItem = UIBarButtonItem(customView: rv)
+        navigationItem.rightBarButtonItem = rightItem
     }
     
     func initTitleImage() {
