@@ -34,21 +34,45 @@ class ViewController: UIViewController {
     }
     
     func setCallAlertButton() {
-        let alertBtn = UIButton(type: .system)
+        let alertMapBtn = UIButton(type: .system)
         
-        alertBtn.frame = CGRect(x: 0, y: 150, width: 100, height:30)
-        alertBtn.center.x = view.frame.width/2 - 50
-        alertBtn.setTitle("Map Alert", for: .normal)
-        alertBtn.addTarget(self, action: #selector(mapAlert(_:)), for: .touchUpInside)
-        view.addSubview(alertBtn)
+        alertMapBtn.frame = CGRect(x: 0, y: 150, width: 100, height:30)
+        alertMapBtn.center.x = view.frame.width/2 - 50
+        alertMapBtn.setTitle("Map Alert", for: .normal)
+        alertMapBtn.addTarget(self, action: #selector(mapAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertMapBtn)
         
-        let alertBtn2 = UIButton(type: .system)
+        let alertImageBtn = UIButton(type: .system)
         
-        alertBtn2.frame = CGRect(x: 0, y: 150, width: 100, height:30)
-        alertBtn2.center.x = view.frame.width/2 + 50
-        alertBtn2.setTitle("Image Alert", for: .normal)
-        alertBtn2.addTarget(self, action: #selector(imageAlert(_:)), for: .touchUpInside)
-        view.addSubview(alertBtn2)
+        alertImageBtn.frame = CGRect(x: 0, y: 150, width: 100, height:30)
+        alertImageBtn.center.x = view.frame.width/2 + 50
+        alertImageBtn.setTitle("Image Alert", for: .normal)
+        alertImageBtn.addTarget(self, action: #selector(imageAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertImageBtn)
+        
+        let alertSliderBtn = UIButton(type: .system)
+
+        alertSliderBtn.frame = CGRect(x: alertMapBtn.frame.origin.x, y: 250, width: 100, height:30)
+        alertSliderBtn.setTitle("Slider Alert", for: .normal)
+        alertSliderBtn.addTarget(self, action: #selector(sliderAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertSliderBtn)
+    }
+    
+    @objc func sliderAlert(_ sender: UIButton) {
+
+        // 콘텐츠 영역에 들어갈 뷰 컨트롤러 생성 및 등록
+        let contentVC = ControlViewController()
+        
+        let alert = UIAlertController(title: nil, message: "밝기를 설정해 주세요", preferredStyle: .alert)
+        alert.setValue(contentVC, forKey: "contentViewController")
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            print(">>> sliderValue = \(contentVC.sliderValue)")
+        })
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
     @objc func imageAlert(_ sender: UIButton) {
