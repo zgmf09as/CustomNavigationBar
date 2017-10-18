@@ -56,6 +56,31 @@ class ViewController: UIViewController {
         alertSliderBtn.setTitle("Slider Alert", for: .normal)
         alertSliderBtn.addTarget(self, action: #selector(sliderAlert(_:)), for: .touchUpInside)
         view.addSubview(alertSliderBtn)
+        
+        let alertListBtn = UIButton(type: .system)
+        
+        alertListBtn.frame = CGRect(x: alertImageBtn.frame.origin.x, y: 250, width: 100, height:30)
+        alertListBtn.setTitle("List Alert", for: .normal)
+        alertListBtn.addTarget(self, action: #selector(listAlert(_:)), for: .touchUpInside)
+        view.addSubview(alertListBtn)
+    }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        print(">>> 선택된 행은 \(indexPath.row) 입니다.")
+    }
+    
+    @objc func listAlert(_ sender: UIButton) {
+        // 콘텐츠 영역에 들어갈 뷰 컨트롤러 생성 및 등록
+        let contentVC = ListViewController()
+        contentVC.delegate = self
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.setValue(contentVC, forKey: "contentViewController")
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
     
     @objc func sliderAlert(_ sender: UIButton) {
