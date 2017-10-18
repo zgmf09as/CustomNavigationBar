@@ -24,6 +24,12 @@ class ViewController: UIViewController {
         // 텍스트필드 사용하기, 아이템 영역 커스터마이징
         initTitleInput()
         
+        // 크롬 브라우저 UI 흉내내기
+        initTitleCrome()
+    }
+    
+    func initTitleCrome() {
+        
     }
     
     func initTitleInput() {
@@ -43,6 +49,10 @@ class ViewController: UIViewController {
         navigationItem.titleView = tf
         
         // left item area
+        let lv = UIView()
+        lv.frame = CGRect(x: 0, y: 0, width: 150, height: 37)
+        lv.backgroundColor = UIColor.red
+        
         let leftItem = UIBarButtonItem(customView: lv)
         navigationItem.leftBarButtonItem = leftItem
         
